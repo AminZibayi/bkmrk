@@ -9,9 +9,9 @@ function printHelp(): void {
 Usage: bookmark-parser <input-file> [options]
 
 Options:
-  -o, --output <file>    Output file path (default: stdout)
-  -f, --format <format>  Output format: 'tree' or 'flat' (default: 'tree')
-  -d, --dates <mode>     Date mode: 'date', 'iso', 'unix', 'none' (default: 'iso')
+-o, --output <file>    Output file path (default: stdout)
+-f, --format <format>  Output format: 'tree', 'flat', or 'kv' (default: 'tree')
+-d, --dates <mode>     Date mode: 'date', 'iso', 'unix', 'none' (default: 'iso')
   --no-icon              Omit favicon icon base64 strings
   -i, --interactive      Launch the interactive Terminal User Interface (TUI)
   -h, --help             Show help documentation
@@ -306,7 +306,7 @@ function runCli(): void {
   const parsed = {
     inputFile: "",
     outputFile: "",
-    format: "tree" as "tree" | "flat",
+    format: "tree" as "tree" | "flat" | "kv",
     dates: "iso" as "date" | "iso" | "unix" | "none",
     includeIcon: true,
     interactive: false,
@@ -325,7 +325,7 @@ function runCli(): void {
       parsed.outputFile = args[++i] || "";
     } else if (arg === "-f" || arg === "--format") {
       const val = args[++i];
-      if (val === "flat" || val === "tree") parsed.format = val;
+      if (val === "flat" || val === "tree" || val === "kv") parsed.format = val;
     } else if (arg === "-d" || arg === "--dates") {
       const val = args[++i];
       if (val === "date" || val === "iso" || val === "unix" || val === "none") parsed.dates = val;

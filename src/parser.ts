@@ -83,12 +83,39 @@ function flattenFolder(
 }
 
 /**
+ * Flattens a Folder structure into a flat key-value object of { [title]: url }.
+ */
+function flattenFolderToKv(
+  folder: Folder,
+  result: Record<string, string> = {}
+): Record<string, string> {
+  for (const child of folder.children) {
+    if (child.type === "bookmark") {
+      result[child.title] = child.url;
+    } else if (child.type === "folder") {
+      flattenFolderToKv(child, result);
+    }
+  }
+  return result;
+}
+
+/**
  * Core parsing state-machine to extract Netscape bookmarks.
  */
+export function parse(
+  html: string,
+  options: ParseOptions & { format: "kv" }
+): Record<string, string>;
 export function parse(html: string, options: ParseOptions & { format: "flat" }): FlatBookmark[];
 export function parse(html: string, options?: ParseOptions & { format?: "tree" }): Folder;
-export function parse(html: string, options?: ParseOptions): Folder | FlatBookmark[];
-export function parse(html: string, options?: ParseOptions): Folder | FlatBookmark[] {
+export function parse(
+  html: string,
+  options?: ParseOptions
+): Folder | FlatBookmark[] | Record<string, string>;
+export function parse(
+  html: string,
+  options?: ParseOptions
+): Folder | FlatBookmark[] | Record<string, string> {
   const format = options?.format ?? "tree";
   const normalizeDates = options?.normalizeDates ?? "date";
   const includeIcon = options?.includeIcon ?? true;
@@ -256,6 +283,9 @@ export function parse(html: string, options?: ParseOptions): Folder | FlatBookma
 
   if (format === "flat") {
     return flattenFolder(root, [], includeIcon);
+  }
+  if (format === "kv") {
+    return flattenFolderToKv(root);
   }
 
   return root;

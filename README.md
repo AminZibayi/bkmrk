@@ -9,7 +9,7 @@ It converts the Netscape Bookmark HTML format (the standard format used by Googl
 - **Zero External Dependencies**: Fast startup, lightweight footprint, and zero maintenance overhead.
 - **Dual module support**: Ships with native ES Modules (ESM) and CommonJS (CJS) exports.
 - **Robust Stateful Parser**: Employs a fast token scanner that gracefully recovers from malformed tags, missing close tags (`</A>` or `</H3>`), and raw HTML attributes.
-- **Multiple Output Formats**: Parse to a hierarchical tree structure (nested folders with children) or a flattened list of bookmarks with their relative directory paths.
+- **Multiple Output Formats**: Parse to a hierarchical tree structure (nested folders with children), a flattened list of bookmarks with their relative directory paths, or a flat key-value object (`{ [title]: url }`) for AI context management.
 - **Configurable Date Handling**: Customize date properties (`ADD_DATE`, `LAST_MODIFIED`, `LAST_VISIT`) to JavaScript `Date` objects, ISO-8601 strings, raw Unix epoch seconds, or raw strings.
 - **Interactive CLI (TUI)**: A feature-rich interactive terminal interface to browse folders, filter/search bookmarks, open links in the system web browser, and export JSON contexts.
 
@@ -31,7 +31,7 @@ yarn add bookmark-parser
 
 ### 1. Parse Bookmark HTML
 
-```typescript
+````typescript
 import { parse } from "bookmark-parser";
 
 const htmlContent = `
@@ -53,7 +53,10 @@ console.log(JSON.stringify(tree, null, 2));
 // Parse into a flat array of bookmarks with parent directory paths
 const flatBookmarks = parse(htmlContent, { format: "flat" });
 console.log(flatBookmarks);
-```
+
+// Parse into a flat key-value object of { [title]: url } for AI context management
+const kvBookmarks = parse(htmlContent, { format: "kv" });
+console.log(kvBookmarks);
 
 ### 2. Parse Options
 
@@ -65,8 +68,9 @@ export interface ParseOptions {
    * Output format:
    * - 'tree': Hierarchical folder tree (default)
    * - 'flat': Flat list of bookmarks with their folder paths
+   * - 'kv': Flat key-value object of { [title]: url } for AI context management
    */
-  format?: "tree" | "flat";
+  format?: "tree" | "flat" | "kv";
 
   /**
    * Date normalization mode:
@@ -84,7 +88,7 @@ export interface ParseOptions {
    */
   includeIcon?: boolean;
 }
-```
+````
 
 ### 3. Stringify back to Netscape HTML
 
@@ -112,7 +116,7 @@ npx bookmark-parser <input-file.html> [options]
 ### Options
 
 - `-o, --output <file>`: Output the parsed JSON to a specific file (writes to stdout by default).
-- `-f, --format <tree|flat>`: Specify output format (default: `'tree'`).
+- `-f, --format <tree|flat|kv>`: Specify output format (default: `'tree'`).
 - `-d, --dates <mode>`: Date mode: `'date'`, `'iso'`, `'unix'`, or `'none'` (default: `'iso'` for JSON compatibility).
 - `--no-icon`: Exclude large favicon base64 strings from the parsed JSON.
 - `-i, --interactive`: Launch the interactive terminal browser interface (TUI).
@@ -124,6 +128,8 @@ npx bookmark-parser <input-file.html> [options]
 # Convert to a flat list and output to stdout
 npx bookmark-parser bookmarks.html -f flat
 
+# Convert to a flat key-value object of { [title]: url }
+npx bookmark-parser bookmarks.html -f kv
 # Save formatted JSON to a file
 npx bookmark-parser bookmarks.html -o parsed.json --no-icon
 ```

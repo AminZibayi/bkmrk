@@ -40,9 +40,10 @@ export interface ParseOptions {
    * Output format.
    * - 'tree': hierarchical tree structure (default)
    * - 'flat': flat list of bookmarks with their folder paths
+   * - 'kv': flat key-value object of { [title]: url } for AI context management
    * @default 'tree'
    */
-  format?: "tree" | "flat";
+  format?: "tree" | "flat" | "kv";
 
   /**
    * Date normalization mode.

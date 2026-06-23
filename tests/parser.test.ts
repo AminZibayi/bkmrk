@@ -116,6 +116,14 @@ describe("Bookmark Parser - html parsing", () => {
     }
   });
 
+  it("should parse into flat key-value object of { [title]: url }", () => {
+    const result = parse(sampleHtml, { format: "kv" });
+    expect(result).toEqual({
+      GitHub: "https://github.com",
+      Google: "https://google.com",
+    });
+  });
+
   it("should recover gracefully from malformed HTML with unclosed tags", () => {
     const malformedHtml = `
       <TITLE>Malformed Export</TITLE>
