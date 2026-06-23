@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      blessed:
+        specifier: ^0.1.81
+        version: 0.1.81
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.3.0
@@ -14,6 +18,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.2.2
         version: 19.8.1
+      '@types/blessed':
+        specifier: ^0.1.27
+        version: 0.1.27
       '@types/node':
         specifier: ^20.12.7
         version: 20.19.43
@@ -471,6 +478,9 @@ packages:
   '@sinclair/typebox@0.27.10':
     resolution: {integrity: sha512-MTBk/3jGLNB2tVxv6uLlFh1iu64iYOQ2PbdOSK3NW8JZsmlaOh2q6sdtKowBhfw8QFLmYNzTW4/oK4uATIi6ZA==}
 
+  '@types/blessed@0.1.27':
+    resolution: {integrity: sha512-ZOQGjLvWDclAXp0rW5iuUBXeD6Gr1PkitN7tj7/G8FCoSzTsij6OhXusOzMKhwrZ9YlL2Pmu0d6xJ9zVvk+Hsg==}
+
   '@types/conventional-commits-parser@5.0.2':
     resolution: {integrity: sha512-BgT2szDXnVypgpNxOK8aL5SGjUdaQbC++WZNjF1Qge3Og2+zhHj+RWhmehLhYyvQwqAmvezruVfOf8+3m74W+g==}
 
@@ -612,6 +622,11 @@ packages:
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+
+  blessed@0.1.81:
+    resolution: {integrity: sha512-LoF5gae+hlmfORcG1M5+5XZi4LBmvlXTzwJWzUlPryN/SJdSflZvROM2TwkT0GMpq7oqT48NRd4GS7BiVBc5OQ==}
+    engines: {node: '>= 0.8.0'}
+    hasBin: true
 
   brace-expansion@1.1.15:
     resolution: {integrity: sha512-EwOCDEex4quD37XhqM3omwtMoJjr//isUZz1JopUNWms+4Z2ViyM/k1YIRePpoVNnQhENnxtFjLaxNHrT7xIUg==}
@@ -1857,6 +1872,10 @@ snapshots:
 
   '@sinclair/typebox@0.27.10': {}
 
+  '@types/blessed@0.1.27':
+    dependencies:
+      '@types/node': 20.19.43
+
   '@types/conventional-commits-parser@5.0.2':
     dependencies:
       '@types/node': 20.19.43
@@ -2044,6 +2063,8 @@ snapshots:
   assertion-error@1.1.0: {}
 
   balanced-match@1.0.2: {}
+
+  blessed@0.1.81: {}
 
   brace-expansion@1.1.15:
     dependencies:

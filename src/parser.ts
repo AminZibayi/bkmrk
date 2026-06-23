@@ -222,15 +222,9 @@ export function parse(html: string, options?: ParseOptions): Folder | FlatBookma
         } else if (!hasSeenRootDL) {
           hasSeenRootDL = true;
         } else {
-          // Subsequent DL without H3 folder -> Create anonymous group folder
-          const anonymousFolder: Folder = {
-            type: "folder",
-            title: "",
-            children: [],
-          };
-          currentFolder.children.push(anonymousFolder);
-          stack.push(anonymousFolder);
-          currentFolder = anonymousFolder;
+          // Subsequent DL without H3 folder -> Push currentFolder onto stack to keep stack balanced
+          // without creating an empty anonymous folder.
+          stack.push(currentFolder);
         }
       } else if (tagName !== "DT" && tagName !== "P" && tagName !== "HR") {
         // Prepare active open tag context
