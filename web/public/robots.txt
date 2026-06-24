@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aminzibayi.github.io/bkmrk/sitemap.xml

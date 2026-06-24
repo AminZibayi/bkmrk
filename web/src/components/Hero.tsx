@@ -53,6 +53,7 @@ export default function Hero({ onLaunchClick }: HeroProps) {
         >
           <button
             onClick={onLaunchClick}
+            aria-label="Launch Bookmark Parser and Browser"
             className="w-full sm:w-auto px-8 py-3 text-sm font-semibold text-black bg-emerald-500 hover:bg-emerald-400 rounded-lg transition-colors cursor-pointer"
           >
             Launch Parser

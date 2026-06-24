@@ -73,6 +73,12 @@ const FolderTree: React.FC<FolderTreeProps> = ({ folder, selectedFolder, onSelec
           className={`p-0.5 hover:bg-neutral-800 rounded transition-colors ${
             hasSubfolders ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
+          aria-label={
+            isOpen
+              ? `Collapse ${folder.title || "Untitled Folder"}`
+              : `Expand ${folder.title || "Untitled Folder"}`
+          }
+          aria-expanded={isOpen}
         >
           {isOpen ? <IconChevronDown size={14} /> : <IconChevronRight size={14} />}
         </button>
@@ -308,7 +314,7 @@ export default function Playground() {
               </div>
             </div>
 
-            <h3 className="text-lg font-bold text-white mb-2">Import Bookmarks</h3>
+            <h2 className="text-lg font-bold text-white mb-2">Import Bookmarks</h2>
             <p className="text-sm text-neutral-400 mb-6 max-w-xs mx-auto">
               Drag and drop your HTML bookmarks file here, or click to browse local files.
             </p>
@@ -354,9 +360,9 @@ export default function Playground() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             {/* Left Panel: Folder Tree Explorer (3 cols) */}
             <div className="lg:col-span-4 glass-panel rounded-xl p-5 min-h-[450px] max-h-[600px] overflow-y-auto">
-              <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-4 border-b border-neutral-900 pb-2">
+              <h2 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-4 border-b border-neutral-900 pb-2">
                 Folder Hierarchy
-              </h3>
+              </h2>
               <div className="flex flex-col gap-1">
                 <FolderTree
                   folder={bookmarksTree}
@@ -393,6 +399,7 @@ export default function Playground() {
                   <button
                     onClick={handleCleanUrls}
                     title="Remove parameters like utm_source, fbclid from URLs"
+                    aria-label="Clean tracking and analytics parameters from URLs"
                     className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-850 hover:border-emerald-500/30 rounded-lg transition-colors cursor-pointer"
                   >
                     <IconBrush size={14} className="text-emerald-400" />
@@ -402,6 +409,7 @@ export default function Playground() {
                   <button
                     onClick={handleDeduplicate}
                     title="Remove duplicate bookmark links based on URL"
+                    aria-label="Remove duplicate bookmarks based on URL"
                     className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-neutral-300 hover:text-white bg-neutral-900 border border-neutral-850 hover:border-emerald-500/30 rounded-lg transition-colors cursor-pointer"
                   >
                     <IconTrash size={14} className="text-emerald-400" />
@@ -459,10 +467,10 @@ export default function Playground() {
               {/* Bookmark List Display */}
               <div className="glass-panel rounded-xl p-5 min-h-[380px] max-h-[500px] overflow-y-auto">
                 <div className="flex justify-between items-center mb-4 border-b border-neutral-900 pb-2">
-                  <h4 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
+                  <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
                     {searchQuery ? "Search Results" : activeFolder?.title || "Root Folder"} (
                     {visibleBookmarks.length})
-                  </h4>
+                  </h3>
                 </div>
 
                 {visibleBookmarks.length === 0 ? (
@@ -518,6 +526,7 @@ export default function Playground() {
                               onClick={() => handleCopyUrl(bookmark.url)}
                               className="p-1.5 rounded bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/20 transition-all cursor-pointer"
                               title="Copy URL"
+                              aria-label={`Copy URL for ${bookmark.title || "bookmark"}`}
                             >
                               {copiedUrl === bookmark.url ? (
                                 <IconCheck size={14} className="text-emerald-400" />
@@ -531,6 +540,7 @@ export default function Playground() {
                               rel="noopener noreferrer"
                               className="p-1.5 rounded bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-emerald-400 hover:border-emerald-500/20 transition-all cursor-pointer"
                               title="Open URL"
+                              aria-label={`Open ${bookmark.title || "bookmark"} in new tab`}
                             >
                               <IconChevronRight size={14} />
                             </a>

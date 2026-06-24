@@ -30,9 +30,9 @@ export default function BentoFeatures() {
                   Pure Performance
                 </span>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
                 RegExp State Machine Parser
-              </h3>
+              </h2>
               <p className="text-sm text-neutral-400 max-w-md">
                 Streamlined synchronous scanner parses HTML exports exceeding 50MB in milliseconds.
                 Avoids heavy DOM parsing.
@@ -66,7 +66,7 @@ export default function BentoFeatures() {
               <IconShieldLock size={20} />
               <span className="text-xs font-semibold tracking-wider uppercase">Privacy First</span>
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">100% Client Side</h3>
+            <h2 className="text-xl font-bold text-white mb-2">100% Client Side</h2>
             <p className="text-sm text-neutral-400">
               Your bookmarks never touch a server. All operations are computed securely in your
               browser sandbox.
@@ -92,7 +92,7 @@ export default function BentoFeatures() {
                 URL Sanitization
               </span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Strip Tracker & Analytics Bloat</h3>
+            <h2 className="text-2xl font-bold text-white mb-2">Strip Tracker & Analytics Bloat</h2>
             <p className="text-sm text-neutral-400">
               Clean tracking parameters like utm_source, utm_medium, fbclid, and gclid from your
               URLs automatically. Re-export lightweight bookmarks.
