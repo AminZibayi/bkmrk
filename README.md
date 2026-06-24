@@ -16,13 +16,13 @@ Converts the Netscape Bookmark HTML format — used by Chrome, Firefox, Safari, 
 
 ## Highlights
 
-|                        |                                                                                        |
-| ---------------------- | -------------------------------------------------------------------------------------- |
-| **Zero dependencies**  | No transitive supply chain risk. What you install is what runs.                        |
-| **Robust parser**      | Gracefully recovers from malformed HTML, missing close tags, and raw attributes.       |
-| **3 output formats**   | Hierarchical tree, flat list with paths, or key-value `{ title: url }` for AI context. |
-| **Date normalization** | `Date` objects, ISO-8601 strings, Unix epochs, or raw strings — your choice.           |
-| **Interactive TUI**    | Full-screen terminal browser to navigate, search, and export bookmarks.                |
+- **Zero dependencies:** No transitive supply chain risk. What you install is what runs.
+- **Robust parser:** Gracefully recovers from malformed HTML, missing close tags, and raw attributes.
+- **3 output formats:** Hierarchical tree, flat list with paths, or key-value `{ title: url }` for AI context.
+- **Date normalization:** `Date` objects, ISO-8601 strings, Unix epochs, or raw strings — your choice.
+- **Interactive TUI:** Full-screen terminal browser to navigate, search, and
+  export bookmarks.
+- **Web playground:** Drag-and-drop your bookmarks HTML to explore and export in the browser.
 
 ---
 
