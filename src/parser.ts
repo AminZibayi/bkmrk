@@ -44,8 +44,11 @@ function parseDate(
   const num = parseInt(val, 10);
   if (isNaN(num)) return undefined;
 
-  const ms = num * 1000;
-  if (mode === "unix") return num;
+  const isMs = val.trim().length >= 13;
+  const ms = isMs ? num : num * 1000;
+  const seconds = isMs ? Math.floor(num / 1000) : num;
+
+  if (mode === "unix") return seconds;
   if (mode === "iso") return new Date(ms).toISOString();
   if (mode === "date") return new Date(ms);
   return val; // "none" (returns raw string)

@@ -100,6 +100,20 @@ describe("bkmrk - html parsing", () => {
     expect(toolbarNone.addDate).toBe("1493012345");
   });
 
+  it("should support millisecond date normalization", () => {
+    const sampleMsHtml = `
+      <DT><H3 ADD_DATE="1767705128904">Study</H3>
+    `;
+    const resMsDate = parse(sampleMsHtml, { normalizeDates: "date" });
+    const folderMsDate = resMsDate.children[0] as Folder;
+    expect(folderMsDate.addDate).toBeInstanceOf(Date);
+    expect((folderMsDate.addDate as Date).getTime()).toBe(1767705128904);
+
+    const resMsUnix = parse(sampleMsHtml, { normalizeDates: "unix" });
+    const folderMsUnix = resMsUnix.children[0] as Folder;
+    expect(folderMsUnix.addDate).toBe(1767705128);
+  });
+
   it("should respect includeIcon flag to strip icons", () => {
     const resWithIcon = parse(sampleHtml, { includeIcon: true });
     const toolbarWithIcon = resWithIcon.children[0] as Folder;

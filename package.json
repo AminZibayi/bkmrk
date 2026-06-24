@@ -21,13 +21,15 @@
   ],
   "scripts": {
     "build": "node build.js",
+    "build:web": "vite build web",
+    "dev:web": "vite web",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:cov": "vitest run --coverage",
     "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"*.json\" \"*.js\"",
-    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\" \"*.json\" \"*.js\"",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"web/src/**/*.ts\" \"web/src/**/*.tsx\" \"web/src/**/*.css\" \"*.json\" \"*.js\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\" \"web/src/**/*.ts\" \"web/src/**/*.tsx\" \"web/src/**/*.css\" \"*.json\" \"*.js\"",
     "typecheck": "tsc --noEmit",
     "validate": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test",
     "prepare": "husky",
@@ -36,19 +38,29 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@tabler/icons-react": "^3.44.0",
+    "@tailwindcss/vite": "^4.3.1",
     "@types/blessed": "^0.1.27",
     "@types/node": "^20.12.7",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
+    "@vitejs/plugin-react": "^6.0.3",
     "@vitest/coverage-v8": "^1.6.0",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
+    "motion": "^12.41.0",
     "prettier": "^3.2.5",
+    "tailwindcss": "^4.3.1",
     "typescript": "^5.4.5",
+    "vite": "^8.1.0",
     "vitest": "^1.6.0"
   },
   "author": "Amin Zibayi",
   "dependencies": {
-    "blessed": "^0.1.81"
+    "blessed": "^0.1.81",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   }
 }
