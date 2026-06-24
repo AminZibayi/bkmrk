@@ -28,9 +28,9 @@
     "test:cov": "vitest run --coverage",
     "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"web/src/**/*.ts\" \"web/src/**/*.tsx\" \"web/src/**/*.css\" \"*.json\" \"*.js\"",
-    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\" \"web/src/**/*.ts\" \"web/src/**/*.tsx\" \"web/src/**/*.css\" \"*.json\" \"*.js\"",
-    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"web/src/**/*.ts\" \"web/src/**/*.tsx\" \"web/src/**/*.css\" \"*.json\" \"*.js\" \"**/*.yml\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\" \"web/src/**/*.ts\" \"web/src/**/*.tsx\" \"web/src/**/*.css\" \"*.json\" \"*.js\" \"**/*.yml\"",
+    "typecheck": "tsc --noEmit && tsc -p web/tsconfig.json --noEmit",
     "validate": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test",
     "prepare": "husky",
     "cli": "node dist/cli.js"
