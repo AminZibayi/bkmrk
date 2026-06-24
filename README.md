@@ -1,10 +1,10 @@
 <div align="center">
 
-# <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/%3E%3C/svg%3E" width="28" alt="bkmrk"> bkmrk
+# <img src="web/public/favicons/favicon-32x32.png" width="28" alt="bkmrk"> bkmrk
 
 **High-performance, zero-dependency browser bookmark parser & CLI for Node.js**
 
-[![npm version](https://img.shields.io/npm/v/bkmrk?style=flat-square&color=blue)](https://www.npmjs.com/package/bkmrk) [![npm downloads](https://img.shields.io/npm/dm/bkmrk?style=flat-square&color=blue)](https://www.npmjs.com/package/bkmrk) [![license](https://img.shields.io/npm/l/bkmrk?style=flat-square)](https://github.com/AminZibayi/bkmrk/blob/main/LICENSE) [![typescript](https://img.shields.io/badge/TypeScript-5.4-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![ci](https://img.shields.io/github/actions/workflow/status/AminZibayi/bkmrk/deploy.yml?branch=main&style=flat-square&label=CI)](https://github.com/AminZibayi/bkmrk/actions) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](https://github.com/AminZibayi/bkmrk/pulls)
+[![npm version](https://img.shields.io/npm/v/bkmrk?style=flat-square&color=blue)](https://www.npmjs.com/package/bkmrk) [![npm downloads](https://img.shields.io/npm/dm/bkmrk?style=flat-square&color=blue)](https://www.npmjs.com/package/bkmrk) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/AminZibayi/bkmrk/blob/main/LICENSE) [![typescript](https://img.shields.io/badge/TypeScript-5.4-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![ci](https://img.shields.io/github/actions/workflow/status/AminZibayi/bkmrk/deploy.yml?branch=main&style=flat-square&label=CI)](https://github.com/AminZibayi/bkmrk/actions) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](https://github.com/AminZibayi/bkmrk/pulls)
 
 Converts the Netscape Bookmark HTML format — used by Chrome, Firefox, Safari, Edge, and Opera — into clean, machine-readable JSON. Ships with a powerful library and an interactive terminal browser.
 
