@@ -2,6 +2,7 @@
   "name": "bkmrk",
   "version": "0.1.3",
   "description": "High-performance, zero-dependency, and lightweight browser bookmark HTML exporter/parser with an interactive CLI.",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AminZibayi/bkmrk.git"
