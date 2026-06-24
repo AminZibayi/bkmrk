@@ -35,7 +35,7 @@ export default function App() {
             Playground
           </a>
           <a
-            href="https://github.com/aminzibayi/bookmark-parser"
+            href="https://github.com/aminzibayi/bkmrk"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-xs font-semibold text-neutral-400 hover:text-white transition-colors"

@@ -58,7 +58,7 @@ export default function Hero({ onLaunchClick }: HeroProps) {
             Launch Parser
           </button>
           <a
-            href="https://github.com/aminzibayi/bookmark-parser"
+            href="https://github.com/aminzibayi/bkmrk"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-3 text-sm font-semibold text-neutral-300 hover:text-white bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-all cursor-pointer"
