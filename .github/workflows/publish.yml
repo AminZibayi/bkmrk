@@ -43,5 +43,8 @@ jobs:
       - name: Upgrade npm
         run: npm install -g npm@latest
 
+      - name: Clear .npmrc auth token for OIDC
+        run: npm config delete //registry.npmjs.org/:_authToken
+
       - name: Publish to npm
         run: npm publish --provenance
