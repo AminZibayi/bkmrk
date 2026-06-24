@@ -1,6 +1,6 @@
 {
   "name": "bkmrk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "High-performance, zero-dependency, and lightweight browser bookmark HTML exporter/parser with an interactive CLI.",
   "repository": {
     "type": "git",
@@ -61,6 +61,9 @@
     "typescript": "^5.4.5",
     "vite": "^8.1.0",
     "vitest": "^1.6.0"
+  },
+  "publishConfig": {
+    "provenance": true
   },
   "author": "Amin Zibayi",
   "dependencies": {
