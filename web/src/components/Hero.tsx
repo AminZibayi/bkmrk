@@ -6,7 +6,7 @@ interface HeroProps {
 
 export default function Hero({ onLaunchClick }: HeroProps) {
   return (
-    <section className="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-16 overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center text-center px-6 py-12 min-h-[calc(100vh-4rem)] overflow-hidden">
       {/* Background glowing mesh */}
       <div className="absolute inset-0 oled-grid pointer-events-none" />
 
