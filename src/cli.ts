@@ -6,7 +6,7 @@ import { Folder, Bookmark } from "./types.js";
 
 function printHelp(): void {
   console.log(`
-Usage: bookmark-parser <input-file> [options]
+Usage: bkmrk <input-file> [options]
 
 Options:
 -o, --output <file>    Output file path (default: stdout)
@@ -36,7 +36,7 @@ function openUrl(url: string): void {
 // ─── Interactive TUI using blessed ────────────────────────────────────────────────
 
 function startTui(rootFolder: Folder): void {
-  const screen = blessed.screen({ smartCSR: false, title: "Bookmark Parser Browser" });
+  const screen = blessed.screen({ smartCSR: false, title: "bkmrk Browser" });
 
   // State
   let currentFolder = rootFolder;
@@ -151,7 +151,7 @@ function startTui(rootFolder: Folder): void {
 
   function render(): void {
     // Header
-    const titleText = " BOOKMARK PARSER BROWSER ";
+    const titleText = " BKMRK BROWSER ";
     const pad = Math.max(0, Math.floor((screen.cols - titleText.length) / 2));
     headerBox.content = " ".repeat(pad) + titleText;
 

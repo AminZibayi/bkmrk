@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { parse } from "../src/parser.js";
 import { Folder } from "../src/types.js";
 
-describe("Bookmark Parser - html parsing", () => {
+describe("bkmrk - html parsing", () => {
   const sampleHtml = `
     <!DOCTYPE NETSCAPE-Bookmark-file-1>
     <!-- This is an automatically generated file. -->

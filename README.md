@@ -1,4 +1,4 @@
-# bookmark-parser
+# bkmrk
 
 A high-performance, zero-dependency, and lightweight browser bookmark HTML exporter/parser for Node.js and modern JavaScript environments.
 
@@ -18,11 +18,11 @@ It converts the Netscape Bookmark HTML format (the standard format used by Googl
 ## Installation
 
 ```bash
-pnpm add bookmark-parser
+pnpm add bkmrk
 # or
-npm install bookmark-parser
+npm install bkmrk
 # or
-yarn add bookmark-parser
+yarn add bkmrk
 ```
 
 ---
@@ -32,7 +32,7 @@ yarn add bookmark-parser
 ### 1. Parse Bookmark HTML
 
 ````typescript
-import { parse } from "bookmark-parser";
+import { parse } from "bkmrk";
 
 const htmlContent = `
 <!DOCTYPE NETSCAPE-Bookmark-file-1>
@@ -95,7 +95,7 @@ export interface ParseOptions {
 Convert a bookmark tree back to a valid browser-importable HTML bookmark file:
 
 ```typescript
-import { stringify } from "bookmark-parser";
+import { stringify } from "bkmrk";
 
 const htmlOutput = stringify(tree, {
   compact: false, // Outputs pretty-printed, indented HTML structure
@@ -110,7 +110,7 @@ const htmlOutput = stringify(tree, {
 The package includes a globally executable binary script. Run it via `npx` or install it globally:
 
 ```bash
-npx bookmark-parser <input-file.html> [options]
+npx bkmrk <input-file.html> [options]
 ```
 
 ### Options
@@ -126,12 +126,12 @@ npx bookmark-parser <input-file.html> [options]
 
 ```bash
 # Convert to a flat list and output to stdout
-npx bookmark-parser bookmarks.html -f flat
+npx bkmrk bookmarks.html -f flat
 
 # Convert to a flat key-value object of { [title]: url }
-npx bookmark-parser bookmarks.html -f kv
+npx bkmrk bookmarks.html -f kv
 # Save formatted JSON to a file
-npx bookmark-parser bookmarks.html -o parsed.json --no-icon
+npx bkmrk bookmarks.html -o parsed.json --no-icon
 ```
 
 ### Interactive TUI Browser
@@ -139,7 +139,7 @@ npx bookmark-parser bookmarks.html -o parsed.json --no-icon
 Launch a full-screen interactive explorer in the terminal to browse, search, and open your exported bookmarks:
 
 ```bash
-npx bookmark-parser bookmarks.html -i
+npx bkmrk bookmarks.html -i
 ```
 
 #### TUI Keyboard Controls:

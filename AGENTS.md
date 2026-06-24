@@ -1,6 +1,6 @@
 # AGENTS Guidelines for This Repository
 
-This repository contains `bookmark-parser`, a zero-dependency, high-performance TypeScript package for parsing and stringifying Netscape HTML bookmarks. Please follow these guidelines so that the package and its interactive terminal browser (TUI) remain clean, fast, and robust.
+This repository contains `bkmrk`, a zero-dependency, high-performance TypeScript package for parsing and stringifying Netscape HTML bookmarks. Please follow these guidelines so that the package and its interactive terminal browser (TUI) remain clean, fast, and robust.
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "name": "bookmark-parser",
+  "name": "bkmrk",
   "version": "0.1.0",
   "description": "High-performance, zero-dependency, and lightweight browser bookmark HTML exporter/parser with an interactive CLI.",
   "main": "./dist/index.cjs",
@@ -14,7 +14,7 @@
     }
   },
   "bin": {
-    "bookmark-parser": "./dist/cli.cjs"
+    "bkmrk": "./dist/cli.cjs"
   },
   "files": [
     "dist"

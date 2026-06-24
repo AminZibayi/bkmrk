@@ -3,7 +3,7 @@ import { parse } from "../src/parser.js";
 import { stringify } from "../src/writer.js";
 import { Folder } from "../src/types.js";
 
-describe("Bookmark Parser - stringification", () => {
+describe("bkmrk - stringification", () => {
   const originalTree: Folder = {
     type: "folder",
     title: "My Custom Bookmarks & Links",
