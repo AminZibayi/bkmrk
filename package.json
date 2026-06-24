@@ -2,6 +2,11 @@
   "name": "bkmrk",
   "version": "0.1.0",
   "description": "High-performance, zero-dependency, and lightweight browser bookmark HTML exporter/parser with an interactive CLI.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AminZibayi/bkmrk.git"
+  },
+  "homepage": "https://aminzibayi.github.io/bkmrk/",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
